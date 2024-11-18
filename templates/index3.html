@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Detection</title>
+    <style>
+        /* Navigation Bar Styles */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            background-color: #333;
+        }
+        
+        nav ul li {
+            margin: 0;
+        }
+        
+        nav ul li a {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        
+        /* Container and Form Styles */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        input[type="file"] {
+            margin-top: 15px;
+            padding: 10px;
+        }
+        
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('index3') }}">Upload Image</a></li>
+            <!-- Add more menu items here if needed -->
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Deepfake Detection</h1>
+        <form method="POST" enctype="multipart/form-data" action="{{ url_for('index3') }}">
+            <input type="file" name="file" accept="image/*">
+            <button type="submit">Upload Image</button>
+        </form>
+
+        <!-- Display Result Message -->
+        {{ rslt }}
+
+        <!-- Display Result Image -->
+        <img src="{{ url_for('static', filename='rslt.png') }}" alt="Result Image" style="width:300px; height:auto;">
+    </div>
+</body>
+</html>
