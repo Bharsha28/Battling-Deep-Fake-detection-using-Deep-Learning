@@ -10,10 +10,10 @@ tensorflow==2.12.0
 opencv-python==4.8.1.78
 xgboost==1.5.2
 pydub==0.25.1
-pygame==2.1.2
+pygame
 gTTS==2.2.3
 scikit-learn==1.3.1
-editdistance==0.6.0
+editdistance
 lmdb==1.3.0
 PyMySQL==0.10.0
 scikit-image==0.19.1
